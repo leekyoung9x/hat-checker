@@ -13,12 +13,6 @@ jobs:
         with:
           ref: master  # Đảm bảo checkout đúng nhánh master
 
-      - name: Set up Git configuration with token
-        run: |
-          git config --global user.email "huytung55123@gmail.com"
-          git config --global user.name "CI/CD Bot"
-          git config --global url."https://${{ secrets.GH_ACCESS_TOKEN }}@github.com".insteadOf "https://github.com"
-
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -32,8 +26,9 @@ jobs:
 
       - name: Commit and Push iOS folder
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.email "huytung55123@gmail.com"
+          git config --global user.name "CI/CD Bot"
+          git config --global url."https://${{ secrets.GH_ACCESS_TOKEN }}@github.com".insteadOf "https://github.com"
           git fetch origin master
           git checkout master
           git add ios/
