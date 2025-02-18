@@ -6,7 +6,9 @@
       "ios/Podfile.lock",
       "ios/hat-checker/Info.plist",
       "ios/hat-checker.xcodeproj/",
-      "ios/hat-checker.xcworkspace/"
+      "ios/hat-checker.xcworkspace/",
+      "ios/Gemfile",
+      "ios/Gemfile.lock",
     ]
   }
 }
