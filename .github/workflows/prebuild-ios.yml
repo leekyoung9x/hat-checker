@@ -32,5 +32,4 @@ jobs:
           git checkout master
           git add ios/
           git commit -m "Auto-generated iOS prebuild via GitHub Actions" || echo "No changes to commit"
-          git pull --rebase
           git push origin master
