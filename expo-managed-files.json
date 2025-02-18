@@ -1,0 +1,12 @@
+{
+  "ios": {
+    "excluded": [
+      "ios/fastlane/",
+      "ios/Podfile",
+      "ios/Podfile.lock",
+      "ios/hat-checker/Info.plist",
+      "ios/hat-checker.xcodeproj/",
+      "ios/hat-checker.xcworkspace/"
+    ]
+  }
+}
