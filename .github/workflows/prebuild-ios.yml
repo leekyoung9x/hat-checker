@@ -1,9 +1,6 @@
 name: Prebuild iOS for Expo
 
 on:
-  push:
-    branches:
-      - master  # Chạy khi có thay đổi trên nhánh main
   workflow_dispatch:  # Cho phép chạy thủ công từ GitHub Actions
 
 jobs:
