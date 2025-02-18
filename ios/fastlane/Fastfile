@@ -65,7 +65,7 @@ platform :ios do
 
     # Build ứng dụng với Xcode
     build_ios_app(
-      scheme: "NroChecker",
+      scheme: "hat-checker",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: {
