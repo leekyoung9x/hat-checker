@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourcompany.yourapp",
+      "package": "com.hat.profile",
       "versionCode": 1
     },
     "web": {
