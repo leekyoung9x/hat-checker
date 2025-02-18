@@ -1,32 +1,36 @@
-name: Prebuild iOS for Expo
+name: Prebuild iOS for Expo (Manual Only)
 
 on:
-  workflow_dispatch:  # Cho phép chạy thủ công từ GitHub Actions
+  workflow_dispatch:  # Chỉ chạy khi được kích hoạt thủ công
 
 jobs:
   prebuild-ios:
-    runs-on: macos-latest  # Phải dùng macOS để build iOS
+    runs-on: macos-latest  # Chạy trên máy Mac (cần thiết để build iOS)
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          ref: master  # Đảm bảo checkout đúng nhánh master
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Cập nhật Node.js phiên bản mới nhất
+          node-version: 18  # Dùng Node.js phiên bản mới
 
       - name: Install Dependencies
         run: npm install
 
       - name: Run Expo Prebuild for iOS
-        run: npx expo prebuild --platform ios --clean
+        run: npx expo prebuild --platform ios
 
       - name: Commit and Push iOS folder
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          git fetch origin master
+          git checkout master
           git add ios/
           git commit -m "Auto-generated iOS prebuild via GitHub Actions" || echo "No changes to commit"
-          git push origin main
-        continue-on-error: true  # Tránh lỗi khi không có thay đổi mới
+          git pull --rebase
+          git push origin master
