@@ -14,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hat.profile",
+      "bundleIdentifier": "com.chanbeodu.chubeodan",
       "buildNumber": "1.0.0",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.hat.profile",
+      "package": "com.chanbeodu.chubeodan",
       "versionCode": 1
     },
     "web": {

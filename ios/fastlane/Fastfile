@@ -25,9 +25,9 @@ platform :ios do
 
     # Đảm bảo API Key từ Apple được thiết lập đúng
     api_key = app_store_connect_api_key(
-      key_id: "F2FJR735SW",
-      issuer_id: "c25c9a94-3764-4ecf-b9d8-63408ce4989d",
-      key_filepath: "./fastlane/AuthKey_F2FJR735SW.p8",
+      key_id: "7K64KRXNM6",
+      issuer_id: "fab32ffa-1bd6-4f10-adba-896f0fbf60ff",
+      key_filepath: "./fastlane/AuthKey_7K64KRXNM6.p8",
       duration: 1200,
       in_house: false
     )
@@ -38,7 +38,7 @@ platform :ios do
     # Cấu hình provisioning profile với match
     match(
       type: "appstore",
-      app_identifier: "com.hat.profile",
+      app_identifier: "com.chanbeodu.chubeodan",
       api_key: api_key,
       team_id: "6VLL82FXHY",
       keychain_name: "fastlane_tmp.keychain",
@@ -48,9 +48,9 @@ platform :ios do
     # Cập nhật cấu hình signing trong Xcode
     update_code_signing_settings(
       use_automatic_signing: false,
-      team_id: "6VLL82FXHY",
+      team_id: "82SS6KUW4P",
       code_sign_identity: "Apple Distribution",
-      profile_name: "match AppStore com.hat.profile"
+      profile_name: "match AppStore com.chanbeodu.chubeodan"
     )
 
     # Kiểm tra provisioning profile
@@ -69,16 +69,16 @@ platform :ios do
       export_method: "app-store",
       export_options: {
         provisioningProfiles: {
-          "com.hat.profile" => "match AppStore com.hat.profile"
+          "com.chanbeodu.chubeodan" => "match AppStore com.chanbeodu.chubeodan"
         }
       },
-      xcargs: "DEVELOPMENT_TEAM=6VLL82FXHY CODE_SIGN_IDENTITY='Apple Distribution' -allowProvisioningUpdates"
+      xcargs: "DEVELOPMENT_TEAM=82SS6KUW4P CODE_SIGN_IDENTITY='Apple Distribution' -allowProvisioningUpdates"
     )
 
     # Upload lên TestFlight
     upload_to_testflight(
       api_key: api_key,
-      app_identifier: "com.hat.profile"
+      app_identifier: "com.chanbeodu.chubeodan"
     )
 
     UI.success("🎉 Ứng dụng đã được đẩy lên TestFlight thành công!")

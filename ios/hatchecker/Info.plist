@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.hat.profile</string>
+          <string>com.chanbeodu.chubeodan</string>
         </array>
       </dict>
     </array>
